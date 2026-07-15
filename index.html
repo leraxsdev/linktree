@@ -158,30 +158,6 @@
             margin-bottom: 0.375rem;
         }
 
-        .view-counter {
-            position: fixed;
-            bottom: 1.5rem;
-            left: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 0.75rem;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.7);
-            z-index: 10;
-        }
-
-        .view-counter svg {
-            width: 18px;
-            height: 18px;
-            color: var(--color-accent);
-        }
-
         .profile-url {
             font-size: 0.8125rem;
             color: var(--color-accent);
@@ -291,10 +267,6 @@
 </head>
 <body>
     <div class="rain" id="rain"></div>
-    <div class="view-counter">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
-        <span id="viewCount">0</span>
-    </div>
     <div class="container">
         <div class="profile">
             <div class="profile-image" role="img" aria-label="Profile picture">
@@ -320,13 +292,6 @@
     <script>
         // Set current year
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        // View counter
-        const viewCountKey = 'linktree_view_count';
-        let viewCount = parseInt(localStorage.getItem(viewCountKey) || '0');
-        viewCount++;
-        localStorage.setItem(viewCountKey, viewCount.toString());
-        document.getElementById('viewCount').textContent = viewCount.toLocaleString();
 
         // Link configuration - แก้ไข URL ตรงนี้
         const links = [
